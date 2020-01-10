@@ -1,0 +1,35 @@
+.third{
+   position: absolute;
+   background-color: rgb(153, 19, 231);
+   top: 140px;
+   left: 10px;
+   color: black;
+}
+
+.hide, .hide + label ~ div{
+    display: none;
+}
+.hide + label,
+.hide:checked + label {
+    background-color: aliceblue;
+    padding: 0;
+    color: rgb(12, 11, 11);
+    cursor: pointer;
+
+}
+
+.hide:checked + label {
+    background-color: aliceblue;
+    color: rgb(255, 0, 157);
+    border-bottom: 0;
+}
+
+.hide:checked + label + div{
+    display: block;
+   
+    padding: 20px;
+}
+
+.demo {
+    margin: 5% 10%;
+}

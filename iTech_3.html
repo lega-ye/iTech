@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script>
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  document.write(Math.floor(Math.random() * (max - min)) + min);
+	}
+	var result = prompt('Write the intervals');
+
+	function getRandomIntAnother(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min)) + min;
+	}
+	</script>
+
+	 <title>
+     Лабораторная работа №5
+  </title>
+	</head>
+	<body>
+		<table id="myTable" border='5'>
+    <tbody>
+        <tr style = "background-color: #261a0e; color: white">
+            <td><script>getRandomInt(1, 5);</script></td>
+						<td><script>getRandomInt(1, 5);</script></td>
+						<td><script>getRandomInt(1, 5);</script></td>
+        </tr>
+    </tbody>
+		</table>
+	</body>
+
+<script>
+
+count = 0;
+var interv = setInterval(Append, result);
+
+function Append() {
+	var tableRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+
+// Insert a row in the table at the last row
+var newRow   = tableRef.insertRow();
+if (count%2) {
+newRow.setAttribute("style", "background: #b18d67;");
+}
+else {
+newRow.setAttribute("style", "background: #f5e0cc;");
+}
+
+for (i=0; i<3; i++) {
+// Insert a cell in the row at index 0
+var newCell  = newRow.insertCell(i);
+
+// Append a text node to the cell
+var newText  = document.createTextNode(getRandomIntAnother(100, 200));
+newCell.appendChild(newText);
+}
+count++;
+if (count == 10) {
+	clearInterval(interv);
+}
+}
+</script>
+</body>
+</html>
